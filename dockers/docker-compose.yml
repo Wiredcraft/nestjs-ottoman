@@ -1,0 +1,26 @@
+version: "3"
+services:
+  couchbase:
+    image: 'couchbase:community-7.0.2'
+    container_name: couchbase
+    ports:
+      - '8091-8094:8091-8094'
+      - '11207:11207'
+      - '11210:11210'
+      - '18091-18093:18091-18093'
+    healthcheck:
+      test:
+        - CMD
+        - couchbase-cli
+        - server-info
+        - '--cluster=couchbase:8091'
+        - '--username=Administrator'
+        - '--password=password'
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - cb7
+networks:
+  cb7: null
+
