@@ -79,7 +79,7 @@ export default () => ({
 ```
 
 
-2. Define an Ottoman Model and schema, user `CouchbaseModule.forFeature()` to initinize and inject the Model object to other app modules.
+2. Define an Ottoman Model and schema, user `CouchbaseModule.forFeature()` to initialize and inject the Model object to other app modules.
 
 ```typescript
 import { Module } from '@nestjs/common';
