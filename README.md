@@ -142,6 +142,80 @@ export class CatService {
 
 Complete example code can be found in `test` folder.
 
+## Couchbase Indexes
+
+According to the [Ottoman Document](https://ottomanjs.com/guides/schema.html#index-types), building the index can cause a significant performance impact, this Nestjs-Ottoman won't take care of index building, you have to have another script or application to handle the index initialization.
+
+## Design
+
+### Modeling
+
+```
+                                                           ╔══════════════════════════════════════╗
+                                                           ║                                      ║
+                                                           ║                  (scope:collection-1)║
+                                                           ║  ┌───────────┐  ┌──────────┐         ║
+                                                       ┌───╬─▶│  Model1   │  │ Schema1  │         ║
+                                                       │   ║  └───────────┘  └──────────┘         ║
+                                                       │   ║                                      ║
+┌────────────────────┐     ┌─────────────────────┐     │   ║                                      ║
+│       bucket       │     │                     │     │   ╚══════════════════════════════════════╝
+│                    │     │  Ottoman instance1  │     │   ╔══════════════════════════════════════╗
+│  (cluster:bucket)  │────▶│    (connection1)    │─────┤   ║                                      ║
+│                    │     │                     │     │   ║                  (scope:collection-2)║
+└────────────────────┘     └─────────────────────┘     │   ║   ┌──────────┐  ┌───────────┐        ║
+                                                       └───╬─▶ │  Model2  │  │  Schema2  │        ║
+                                                           ║   └──────────┘  └───────────┘        ║
+                                                           ║                                      ║
+                                                           ║                                      ║
+                                                           ╚══════════════════════════════════════╝
+                                                                                                   
+                                                           ╔══════════════════════════════════════╗
+                                                           ║                                      ║
+                                                           ║                  (scope:collection-1)║
+                                                           ║   ┌───────────┐  ┌──────────┐        ║
+                                                        ┌──╬──▶│  Model3   │  │ Schema3  │        ║
+ ┌─────────────────────┐    ┌─────────────────────┐     │  ║   └───────────┘  └──────────┘        ║
+ │       bucket        │    │                     │     │  ║                                      ║
+ │                     │    │  Ottoman instance2  │     │  ║                                      ║
+ │  (cluster:bucket)   │───▶│    (connection2)    │─────┤  ║                                      ║
+ │                     │    │                     │     │  ║    ┌──────────┐  ┌───────────┐       ║
+ └─────────────────────┘    └─────────────────────┘     └──╬──▶ │  Model4  │  │  Schema4  │       ║
+                                                           ║    └──────────┘  └───────────┘       ║
+                                                           ║                                      ║
+                                                           ╚══════════════════════════════════════╝
+                                                                                   
+```
+
+### Ottoman Models spawning
+
+```
+                                                ┌─────────────────────────────────────────┐       
+┌────────────────────────────────────┐          │                                         │       
+│Connection pool Provider            │          │                                         │       
+│                                    │          │                                         │       
+│             ┌────────────────┐     │          │                                         │       
+│             │  connection1   │     │          │    ForFeature('model def', connName)    │       
+│             └────────────────┘     │◀───use───│                                         │       
+│             ┌────────────────┐     │          │                                         │       
+│             │  connenction2  │     │          │                                         │       
+│             └────────────────┘     │          │                                         │       
+└────────────────────────────────────┘          │                                         │       
+                                                └─────────────────────────────────────────┘       
+                                                                     │                            
+                                                                     │                            
+                                               ┌─────────generate────┴──generate───────┐          
+                                               │                                       │          
+                                               ▼                                       ▼          
+                                    ┌────────────────────┐                  ┌────────────────────┐
+                                    │                    │                  │                    │
+                                    │  Provider-Model2   │                  │  Provider-Model1   │
+                                    │                    │                  │                    │
+                                    │                    │                  │                    │
+                                    │                    │                  │                    │
+                                    └────────────────────┘                  └────────────────────┘
+```
+
 # Development
 
 ## Installation
