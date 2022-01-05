@@ -1,13 +1,15 @@
 {
   "name": "nestjs-ottoman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "author": "Wiredcraft",
   "private": false,
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Wiredcraft/nestjs-ottoman.git"
