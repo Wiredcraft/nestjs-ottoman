@@ -1,4 +1,6 @@
+#!/bin/bash
 
+set -ev
 # Environment variables.
 # NODE_ENV=${NODE_ENV:-development}
 # COUCHBASE=$1

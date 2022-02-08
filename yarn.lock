@@ -1823,10 +1823,10 @@ cosmiconfig@^6.0.0:
     path-type "^4.0.0"
     yaml "^1.7.2"
 
-couchbase@3.2.3:
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/couchbase/-/couchbase-3.2.3.tgz#973f07fd34684c1f20909ffada90c15329e8e536"
-  integrity sha512-dCC6AlvcdaQ7PgxXcePgGl2PrVqhLJ/RGT1hJkHY8QWK5mYLcTuP5aMTbhiUys0v1bhRAO9YWgT8n5G3E3Ha5g==
+couchbase@3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/couchbase/-/couchbase-3.2.4.tgz#ba879c02a5079cd8487bc0fe2fb8d5d397678c5d"
+  integrity sha512-Tp1o7ARj1U4WtYoSaKo3PBzNEurbqizwLxe+em7LlwfWDyf1WxGUUFu1Gy7okq3CFZPFdtUUMAh++oDJu/piVA==
   dependencies:
     bindings "^1.5.0"
     debug "^4.3.2"
@@ -3994,12 +3994,12 @@ os-tmpdir@~1.0.2:
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
   integrity sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=
 
-ottoman@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/ottoman/-/ottoman-2.0.1.tgz#36dcdfe1ec8c465ce7e821cdece65e2fe58e9202"
-  integrity sha512-EUwoa1KzLiCty0wtC/87GiBfcrZupwqaESCAfmWGFe1B2KGbVkfy95zvLtIV2GBYfBRCN8jUquQo+mw8h7ORAw==
+ottoman@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/ottoman/-/ottoman-2.1.0.tgz#92d4d186eb50cfec3d690759a26ccb15d09bdc57"
+  integrity sha512-GL1Vqt2BvPtkx1fOhjc9uUeATwZYxt2PvGeEs0nsqYal/7fQ0ZM8ykmW/vS3MLmU7Bjigz+96rCMfHO4aDk5tg==
   dependencies:
-    couchbase "3.2.3"
+    couchbase "3.2.4"
     jsonpath "1.1.1"
     uuid "8.3.2"
 
