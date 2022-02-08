@@ -13,18 +13,26 @@ import {
   getModuleOptionsToken,
 } from './utils';
 
-const createDBConnectionFactory = async (
-  connOptions: ConnectOptions,
-  debug?: boolean,
-  scopeName?: string,
-  collectionName?: string,
-) => {
+const createDBConnectionFactory = async ({
+  ottomanConnectionOptions,
+  debug,
+  scopeName,
+  collectionName,
+  keyGenerator,
+  keyGeneratorDelimiter,
+}: CouchbaseConnectionConfig) => {
   // scopeName & collectionName passed to Constructor can be overrided by model
   const conn = new Ottoman({
     scopeName: scopeName || '_default',
     collectionName: collectionName || '_default',
+    keyGenerator:
+      keyGenerator ||
+      (() => {
+        return '';
+      }),
+    keyGeneratorDelimiter: keyGeneratorDelimiter || '',
   });
-  await conn.connect(connOptions);
+  await conn.connect(ottomanConnectionOptions);
   if (debug) {
     set('DEBUG', true);
   }
@@ -43,12 +51,7 @@ const createConnections = (): Provider => {
         opts.map(async (opt) => {
           connections.set(
             opt.connectionName,
-            await createDBConnectionFactory(
-              opt.ottomanConnectionOptions,
-              opt.debug,
-              opt.scopeName,
-              opt.collectionName,
-            ),
+            await createDBConnectionFactory(opt),
           );
         }),
       );

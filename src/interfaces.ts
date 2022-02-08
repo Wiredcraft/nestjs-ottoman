@@ -9,6 +9,8 @@ export interface CouchbaseConnectionConfig {
   scopeName?: string;
   ottomanConnectionOptions: ConnectOptions;
   debug?: boolean;
+  keyGenerator?: (params: { metadata: any }) => string;
+  keyGeneratorDelimiter?: string;
 }
 
 export type OttomanModelDefinition = {
