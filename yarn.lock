@@ -3994,7 +3994,7 @@ os-tmpdir@~1.0.2:
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
   integrity sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=
 
-ottoman@^2.1.0:
+ottoman@2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/ottoman/-/ottoman-2.1.0.tgz#92d4d186eb50cfec3d690759a26ccb15d09bdc57"
   integrity sha512-GL1Vqt2BvPtkx1fOhjc9uUeATwZYxt2PvGeEs0nsqYal/7fQ0ZM8ykmW/vS3MLmU7Bjigz+96rCMfHO4aDk5tg==
