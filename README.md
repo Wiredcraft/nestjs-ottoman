@@ -7,7 +7,7 @@ A Couchbase module for [Nestjs](https://github.com/nestjs/nest), built on top of
 ## Supported Couchbase version
 
 - Server version 6.x, 7.x
-- Nodejs SDK 3.x
+- Nodejs SDK 4.x (supports Couchbase SDK API 3)
 
 
 # Usage
