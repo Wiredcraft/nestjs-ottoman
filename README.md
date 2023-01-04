@@ -50,7 +50,7 @@ import configuration from './src/configuration';
     }, {
       connectionName: 'pet',
       ottomanConnectionOptions: {
-        connectionString: 'couchbase://localhost:8091',
+        connectionString: 'couchbase://localhost',
         bucketName: 'pet_bucket',
         username: 'Administrator',
         password: 'password',
@@ -68,7 +68,7 @@ export default () => ({
   couchbase: {
     connectionName: 'cat',
     ottomanConnectionOptions: {
-      connectionString: 'couchbase://localhost:8091',
+      connectionString: 'couchbase://localhost',
       bucketName: 'cat_bucket',
       username: 'Administrator',
       password: 'password',
