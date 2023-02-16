@@ -146,6 +146,9 @@ Complete example code can be found in `test` folder.
 
 According to the [Ottoman Document](https://ottomanjs.com/guides/schema.html#index-types), building the index can cause a significant performance impact, this Nestjs-Ottoman won't take care of index building, you have to have another script or application to handle the index initialization.
 
+The index defined on schema will have index name like `${bucketName}_${scopeName}_${collectionName}_${modelName}_${indexFields}` (or `${bucketName}_${scopeName}_${collectionName}_${indexFields}` in `nestjs-ottoman` version `v1.*.*`).
+When create indexes of different models, same index name may cause conflict, in that case, you can specify `scopeName` and `collectionName` in model definition to overwrite the default value `'_default'`.
+
 ## Design
 
 ### Modeling
