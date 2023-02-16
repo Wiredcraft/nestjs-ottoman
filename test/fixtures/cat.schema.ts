@@ -9,4 +9,8 @@ export const CatSchema = {
 export const CatModelDefinition = {
   name: 'Cat',
   schema: new Schema(CatSchema),
+  modelOptions: {
+    scopeName: '_default',
+    collectionName: 'Cat',
+  },
 };
