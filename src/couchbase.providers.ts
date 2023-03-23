@@ -1,6 +1,5 @@
 import { Provider } from '@nestjs/common';
 import { Ottoman, set } from 'ottoman';
-import { ConnectOptions } from 'ottoman/lib/types/ottoman/ottoman';
 
 import {
   CouchbaseConnectionConfig,
