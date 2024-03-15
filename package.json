@@ -32,7 +32,7 @@
   "dependencies": {
     "@nestjs/common": "^9.3.12",
     "@nestjs/core": "^9.3.12",
-    "ottoman": "^2.3.2",
+    "ottoman": "^2.4.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0"
   },
