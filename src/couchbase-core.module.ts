@@ -27,7 +27,9 @@ export class CouchbaseCoreModule implements OnApplicationShutdown {
 
   async onApplicationShutdown() {
     for (const conn of this.connections.values()) {
-      conn && (await conn.close());
+      if (conn) {
+        await conn.close();
+      }
     }
   }
 
