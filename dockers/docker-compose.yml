@@ -1,7 +1,6 @@
-version: "3"
 services:
   couchbase:
-    image: 'couchbase:community-7.0.2'
+    image: 'couchbase:community-7.6.2'
     container_name: couchbase
     ports:
       - '8091-8094:8091-8094'

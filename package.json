@@ -29,36 +29,44 @@
     "test:cov": "jest --coverage --config ./test/jest-e2e.json",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
-    "@nestjs/common": "^9.3.12",
-    "@nestjs/core": "^9.3.12",
-    "ottoman": "^2.3.2",
-    "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.0"
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^9.0.0 || ^10.0.0",
+    "@nestjs/core": "^9.0.0 || ^10.0.0",
+    "ottoman": "^2.5.1"
   },
   "devDependencies": {
-    "@nestjs/cli": "^9.3.0",
-    "@nestjs/config": "^2.3.1",
-    "@nestjs/schematics": "^9.0.4",
-    "@nestjs/testing": "^9.3.12",
-    "@types/express": "^4.17.17",
-    "@types/jest": "29.5.0",
-    "@types/node": "^18.15.5",
-    "@types/supertest": "^2.0.12",
-    "@typescript-eslint/eslint-plugin": "^5.56.0",
-    "@typescript-eslint/parser": "^5.56.0",
-    "eslint": "^8.36.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "jest": "^29.5.0",
-    "prettier": "^2.8.6",
-    "rimraf": "^4.4.1",
-    "source-map-support": "^0.5.20",
-    "supertest": "^6.3.3",
-    "ts-jest": "^29.0.5",
-    "ts-node": "^10.9.1",
-    "tsconfig-paths": "^4.1.2",
-    "typescript": "^4.9.5"
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.17.0",
+    "@nestjs/cli": "^10.4.9",
+    "@nestjs/config": "^3.3.0",
+    "@nestjs/schematics": "^10.2.3",
+    "@nestjs/testing": "^10.4.15",
+    "@types/express": "^5.0.0",
+    "@types/jest": "29.5.14",
+    "@types/node": "^22.10.2",
+    "@types/supertest": "^6.0.2",
+    "@typescript-eslint/eslint-plugin": "^8.18.1",
+    "@typescript-eslint/parser": "^8.18.1",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.14.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.4.2",
+    "rimraf": "^6.0.1",
+    "source-map-support": "^0.5.21",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.7.2"
   },
   "jest": {
     "moduleFileExtensions": [
